@@ -1,81 +1,269 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Info-Share</title>
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <!-- nav -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Info-Share</a>
+  <nav class="navbar navbar-dark navbar-expand-md site-header sticky-top py-1 ">
+    <div class="container ">
+      <a class="navbar-brand py-2" href="/home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img"
+          viewBox="0 0 24 24" focusable="false">
+          <title>Home</title>
+          <circle cx="12" cy="12" r="10" />
+          <path
+            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+        </svg>
+
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class=" col-md-8 collapse navbar-coll apse container d-flex   justify-content-between float-left"
+        id="navbarSupportedContent">
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav mr-auto">
+          <!-- Authentication Links -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Info-Share</a>
+          </li>
+        </ul>
       </div>
+      <div class="float-right">
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Authentication Links -->
+
+          <li class="nav-item">
+            <a class="nav-link login-btn">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link reg-btn">Register</a>
+          </li>
+      </div>
+      </li>
+      </ul>
+    </div>
     </div>
   </nav>
   <!-- ./nav -->
-
+  <div class="jumbotron text-center">
+    <h1>Welcome to Info-Share</h1>
+    <p>
+      <a class="btn btn-primary btn-lg login-btn" style="color: antiquewhite;" role="button">Login</a>
+      <a class="btn btn-primary btn-lg reg-btn" style="color: antiquewhite;" role="button">Register</a></p>
+  </div>
   <!-- main -->
-  <main class="container">
-  <h1 class="text-center">Welcome to Info-Share! <br><small>A simple Facebook clone.</small></h1>
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="home.html">
+            <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Login to start enjoying unlimited fun!</h4>
+              <div class="col-md-6">
+                <input id="login-email" type="email" class="form-control name=" email" required autocomplete="email"
+                  autofocus>
 
-        <!-- login form -->
-        <form method="post" action="home.html">
-          <div class="form-group">
-            <input class="form-control" type="text" name="username" placeholder="Username">
-          </div>
 
-          <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
-          </div>
+                <span class="invalid-feedback" role="alert">
+                </span>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <input class="btn btn-primary" type="submit" name="login" value="Login">
-          </div>
-        </form>
-        <!-- ./login form -->
-      </div>
-      <div class="col-md-6">
-        <h4>Don't have an account yet? Register!</h4>
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
-        <!-- register form -->
-        <form method="post" action="home.html">
-          <div class="form-group">
-            <input class="form-control" type="text" name="username" placeholder="Username">
-          </div>
+              <div class="col-md-6">
+                <input id="login-password" type="password" class="form-control  name=" password" required
+                  autocomplete="current-password">
 
-          <div class="form-group">
-            <input class="form-control" type="text" name="location" placeholder="Location">
-          </div>
 
-          <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
-          </div>
+                <span class="invalid-feedback" role="alert">
 
-          <div class="form-group">
-            <input class="btn btn-success" type="submit" name="register" value="Register">
-          </div>
-        </form>
-        <!-- ./register form -->
+                </span>
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-6 offset-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="remember" id="remember">
+
+                  <label class="form-check-label" for="remember">
+                    Remember Me
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 row mb-0">
+              <div class="col-md-12 offset-2 ">
+                <button type="submit" class=" btn btn-primary">
+                  Login
+                </button>
+
+                <a class="col-md-8 btn btn-link" href="">
+                  Forgot Your Password?
+                </a>
+
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </main>
-  <!-- ./main -->
+  </div>
 
-  <!-- footer -->
-  <footer class="container text-center">
-    <ul class="nav nav-pills pull-right">
-      <li>Info-Share</li>
-    </ul>
+  <div id="regModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="home.html">
+            <div class="form-group row">
+              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+
+              <div class="col-md-6">
+                <input id="name" type="text" class="form-control " name="name" required autocomplete="name" autofocus>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+
+              <div class="col-md-6">
+                <input id="email" type="email" class="form-control " name="email" required autocomplete="email">
+
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+              <div class="col-md-6">
+                <input id="password" type="password" class="form-control " name="password" required
+                  autocomplete="new-password">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+
+              <div class="col-md-6">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
+                  autocomplete="new-password">
+              </div>
+            </div>
+
+            <div class="form-group row mb-0">
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                  Register
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+
+  </div>
+
+  <footer class="footer page-footer font-small special-color-dark pt-4 fixed-bottom">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fa fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fa fa-google-plus"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fa fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright Info-Share
+    </div>
+    <!-- Copyright -->
+
   </footer>
-  <!-- ./footer -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <!-- Footer -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.login-btn').click(function () {
+        $('#loginModal').modal('show');
+      });
+      $('.reg-btn').click(function () {
+        $('#regModal').modal('show');
+      });
+    });
+  </script>
 </body>
+
 </html>
